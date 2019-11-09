@@ -1,0 +1,54 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+  let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+  let g:NERDTreeDirArrowExpandable = '▶'
+  let g:NERDTreeDirArrowExpandable = '▼'
+  '''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+depands = ['/vim-airline-themes']
+hook_add = '''
+  let g:airline_theme = 'wombat'
+  set laststatus=2
+  "show branch name
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#branch#enabled = 1
+  let g:airline#extensions#tabline#fnamemod = ':t'
+  let g:airline#extensions#wordcount#enabled = 0
+  let g:airline#extensions#default#lyout = [['a', 'b', 'c'], ['x', 'y', 'z']]
+  let g:sirline_section_c = '%t'
+  let g:airline_section_x = '%{&filetype}'
+  let g:airline_section_z = '%3l:%2v %{airline#extensions#ale#get_warning()} %{airline#extensions#ale#get_error()}'
+  let g:airline#extensions#default#section_truncate_width = {}
+  let g:ariline#extensions#whitespace#enabled = 1
+ ''' 
+
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+hook_add = '''
+  set encoding=utf8
+  set guifont=DroidSansMono\ Nerd\ Font\ 11
+  let g:WebDevIconUnicodeDecorateFolderNodes = 1
+  '''
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''
+  let g:ale_lint_on_save = 1
+  let g:ale_lint_on_text_changed = 0
+  let g:ale_lint_on_enter = 0
+  nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+  nmap <silent> <C-J> <Plug>(ale_next_wrap)
+  let g:ale_sign_error = '×'
+  let g:ale_sign_warning = '!!'
+  let g:ale_open_list = 1
+  '''
