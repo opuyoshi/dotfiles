@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOT_FILES=(.bashrc .vimrc .vim .latexmkrc .config)
+DOT_FILES=(.vimrc .vim .latexmkrc .config)
 
 for file in ${DOT_FILES[@]}
 do
