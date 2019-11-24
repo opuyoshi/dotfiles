@@ -52,3 +52,6 @@ hook_add = '''
   let g:ale_sign_warning = '!!'
   let g:ale_open_list = 1
   '''
+
+[[plugins]]
+repo = 'cespare/vim-toml'

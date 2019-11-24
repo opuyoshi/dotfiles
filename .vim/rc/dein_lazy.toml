@@ -139,6 +139,3 @@ hook_source = '''
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
 on_ft = ['python', 'go']
 depends = ['asyncomplete.vim', 'vim-lsp']
-
-[[plugins]]
-repo = 'thinca/vim-quickrun'
