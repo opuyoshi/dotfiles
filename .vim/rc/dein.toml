@@ -36,7 +36,6 @@ repo = 'vim-airline/vim-airline-themes'
 repo = 'ryanoasis/vim-devicons'
 hook_add = '''
   set encoding=utf8
-  set guifont=DroidSansMono\ Nerd\ Font\ 11
   let g:WebDevIconUnicodeDecorateFolderNodes = 1
   '''
 
