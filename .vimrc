@@ -47,6 +47,11 @@ syntax enable
 "Ctrl+eでNERDTreeを開く
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
+"font settings
+set guifont=Cica:h16
+set printfont=Cica:h12
+set ambiwidth=double
+
 "window settings
 nnoremap sj <C-w>j
 nnoremap sk <C-w>k
