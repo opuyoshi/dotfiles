@@ -15,7 +15,7 @@ done
 
 curl -# -O -L https://github.com/miiton/Cica/releases/download/v5.0.1/Cica_v5.0.1_with_emoji.zip
 unzip Cica_v5.0.1_with_emoji.zip
-mkdir -p /usr/local/share/fonts
+sudo mkdir -p /usr/local/share/fonts
 sudo cp Cica-{Bold, BoldItalic, Regular, RegularItalic}.ttf /usr/local/share/fonts/
 cd ~/dotfiles
 rm Cica-{Bold, BoldItalic, Regular, RegularItalic}.ttf 
