@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete.vim'
-on_ft = ['autohotkey', 'autoit', 'cfg', 'git', 'go', 'groovy', 'java', 'javascript', 'python', 'snippet', 'toml', 'vim', 'vb', 'xsl']
+on_ft = ['autohotkey', 'autoit', 'cfg', 'git', 'go', 'groovy', 'java', 'javascript', 'python', 'snippet', 'toml', 'vim', 'vb', 'xsl','c', 'cpp', 'objc', 'objcpp']
 hook_add = '''
   " let g:asyncomplete_log_file = expand('~/_vim/.asyncomplete/log.log')
   let g:asyncomplete_enable_for_all = 0
@@ -9,7 +9,7 @@ hook_add = '''
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-buffer.vim'
-on_ft = ['autohotkey', 'autoit', 'cfg', 'git', 'go', 'groovy', 'java', 'javascript', 'python', 'snippet', 'toml', 'vim', 'vb', 'xsl']
+on_ft = ['autohotkey', 'autoit', 'cfg', 'git', 'go', 'groovy', 'java', 'javascript', 'python', 'snippet', 'toml', 'vim', 'vb', 'xsl', 'c', 'cpp', 'objc', 'objcpp']
 hook_source = '''
   autocmd vimrc User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
       \ 'name': 'buffer',
@@ -21,7 +21,7 @@ hook_source = '''
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-file.vim'
-on_ft = ['autohotkey', 'autoit', 'cfg', 'git', 'go', 'groovy', 'java', 'javascript', 'python', 'snippet', 'toml', 'vim', 'vb', 'xsl']
+on_ft = ['autohotkey', 'autoit', 'cfg', 'git', 'go', 'groovy', 'java', 'javascript', 'python', 'snippet', 'toml', 'vim', 'vb', 'xsl', 'c', 'cpp', 'objc', 'objcpp']
 hook_source = '''
   autocmd vimrc User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
       \ 'name': 'file',
@@ -33,7 +33,7 @@ hook_source = '''
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-necosyntax.vim'
-on_ft = ['autohotkey', 'autoit', 'cfg', 'git', 'go', 'groovy', 'java', 'javascript', 'python', 'snippet', 'toml', 'vim', 'vb', 'xsl']
+on_ft = ['autohotkey', 'autoit', 'cfg', 'git', 'go', 'groovy', 'java', 'javascript', 'python', 'snippet', 'toml', 'vim', 'vb', 'xsl', 'c', 'cpp', 'objc', 'objcpp']
 depends = ['neco-syntax']
 hook_source = '''
   autocmd vimrc User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#necosyntax#get_source_options({
@@ -67,7 +67,7 @@ lazy = 1
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
-on_ft = ['autohotkey', 'autoit', 'cfg', 'git', 'go', 'groovy', 'java', 'javascript', 'python', 'snippet', 'toml', 'vim', 'vb', 'xsl']
+on_ft = ['autohotkey', 'autoit', 'cfg', 'git', 'go', 'groovy', 'java', 'javascript', 'python', 'snippet', 'toml', 'vim', 'vb', 'xsl', 'c', 'cpp', 'objc', 'objcpp']
 depends = ['neosnippet.vim']
 hook_source = '''
   autocmd vimrc User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
@@ -125,19 +125,26 @@ hook_source = '''
           \ })
   endif
   if executable('go-langserver')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'go-langserver',
-        \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
-        \ 'whitelist': ['go'],
-        \ })
-   endif
-   let g:lsp_diagnostics_enabled = 0
-   highlight lspReference ctermfg=red guifg=red ctermbg=green guibg=green
+      au User lsp_setup call lsp#register_server({
+          \ 'name': 'go-langserver',
+          \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
+          \ 'whitelist': ['go'],
+          \ })
+  endif
+  if executable('clangd')
+      au User lsp-setup call lsp#register_server({
+          \ 'name': 'clangd',
+          \ 'cmd': {server_info->['clangd', '-background-index']},
+          \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+          \ })
+  endif
+  let g:lsp_diagnostics_enabled = 0
+  highlight lspReference ctermfg=red guifg=red ctermbg=green guibg=green
 '''
 
 [[plugins]]
 repo = 'prabirshrestha/asyncomplete-lsp.vim'
-on_ft = ['python', 'go']
+on_ft = ['python', 'go', 'c', 'cpp', 'objc', 'objcpp']
 depends = ['asyncomplete.vim', 'vim-lsp']
 
 [[plugins]]
