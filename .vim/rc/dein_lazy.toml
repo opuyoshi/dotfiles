@@ -4,7 +4,7 @@ on_ft = ['autohotkey', 'autoit', 'cfg', 'git', 'go', 'groovy', 'java', 'javascri
 hook_add = '''
   " let g:asyncomplete_log_file = expand('~/_vim/.asyncomplete/log.log')
   let g:asyncomplete_enable_for_all = 0
-  autocmd vimrc FileType autohotkey,autoit,cfg,git,go,groovy,java,javascript,python,snippet,toml,vim,vb,xsl call asyncomplete#enable_for_buffer()
+  autocmd vimrc FileType autohotkey,autoit,cfg,git,go,groovy,java,javascript,python,snippet,toml,vim,vb,xsl,c,cpp,objc,objcpp call asyncomplete#enable_for_buffer()
 '''
 
 [[plugins]]
