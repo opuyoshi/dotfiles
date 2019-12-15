@@ -37,6 +37,7 @@ repo = 'ryanoasis/vim-devicons'
 hook_add = '''
   set encoding=utf8
   let g:WebDevIconUnicodeDecorateFolderNodes = 1
+  let g:airline_powerline_fonts = 1
   '''
 
 [[plugins]]
