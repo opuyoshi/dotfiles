@@ -14,21 +14,17 @@ hook_add = '''
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
-depands = ['/vim-airline-themes']
+depends = ['/vim-airline-themes']
 hook_add = '''
   let g:airline_theme = 'wombat'
   set laststatus=2
-  "show branch name
+  let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#branch#enabled = 1
   let g:airline#extensions#tabline#fnamemod = ':t'
-  let g:airline#extensions#wordcount#enabled = 0
-  let g:airline#extensions#default#lyout = [['a', 'b', 'c'], ['x', 'y', 'z']]
+  let g:airline#extensions#wordcount#enabled = 1
   let g:airline_section_c = '%t'
   let g:airline_section_x = '%{&filetype}'
-  let g:airline_section_z = '%3l:%2v'
-  let g:airline#extensions#default#section_truncate_width = {}
-  let g:ariline#extensions#whitespace#enabled = 1
  ''' 
 
 
@@ -39,7 +35,6 @@ repo = 'vim-airline/vim-airline-themes'
 repo = 'ryanoasis/vim-devicons'
 hook_add = '''
   set encoding=utf8
-  set guifont=DroidSansMono\ Nerd\ Font\ 11
   let g:WebDevIconUnicodeDecorateFolderNodes = 1
   '''
 [[plugins]]
@@ -49,3 +44,12 @@ hook_add = '''
   let g:ale_lint_on_text_changed = 0
   let g:ale_lint_on_enter = 1
   '''
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
