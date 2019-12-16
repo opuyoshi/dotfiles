@@ -114,7 +114,6 @@ inoremap (<Enter> ()<Left><CR><ESC><S-o>
 inoremap " ""<ESC>i
 inoremap ' ''<ESC>i
 inoremap [ []<ESC>i
-inoremap $ $$<ESC>i
 
 "コマンド補完
 set wildmenu "コマンドモードの補完
