@@ -22,7 +22,8 @@ hook_add = '''
   let g:airline#extensions#ale#enabled = 1
   let g:airline#extensions#error_symbol = 'E:'
   let g:airline#extensions#warning_symbol = 'W:'
-  ''' 
+  let g:airline#extensions#whitespace#enabled = 1
+  '''
 
 
 [[plugins]]
