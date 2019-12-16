@@ -13,12 +13,15 @@ hook_add = '''
 repo = 'vim-airline/vim-airline'
 depends = ['/vim-airline-themes']
 hook_add = '''
-  let g:airline_theme = 'wombat'
   set laststatus=2
+  let g:airline_theme = 'wombat'
+  let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#branch#enabled = 1
-  let g:sirline_section_c = '%t'
-  let g:airline_section_x = '%{&filetype}'
+  let g:airline_section_z = airline#section#create(['windowswap', '%3p%%', 'linenr', ':%3v'])
+  let g:airline#extensions#enabled = 1
+  let g:airline#extensions#error_symbol = 'E:'
+  let g:airline#extensions#warning_symbol = 'W:'
   ''' 
 
 
@@ -30,7 +33,6 @@ repo = 'ryanoasis/vim-devicons'
 hook_add = '''
   set encoding=utf8
   let g:WebDevIconUnicodeDecorateFolderNodes = 1
-  let g:airline_powerline_fonts = 1
   '''
 
 [[plugins]]
@@ -42,7 +44,7 @@ hook_add = '''
   nmap <silent> <C-k> <Plug>(ale_previous_wrap)
   nmap <silent> <C-J> <Plug>(ale_next_wrap)
   let g:ale_sign_error = '×'
-  let g:ale_sign_warning = '!!'
+  let g:ale_sign_warning = '⚠'
   let g:ale_open_list = 1
   '''
 
