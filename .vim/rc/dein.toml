@@ -19,7 +19,7 @@ hook_add = '''
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#branch#enabled = 1
   let g:airline_section_z = airline#section#create(['windowswap', '%3p%%', 'linenr', ':%3v'])
-  let g:airline#extensions#enabled = 1
+  let g:airline#extensions#ale#enabled = 1
   let g:airline#extensions#error_symbol = 'E:'
   let g:airline#extensions#warning_symbol = 'W:'
   ''' 
@@ -44,7 +44,7 @@ hook_add = '''
   nmap <silent> <C-k> <Plug>(ale_previous_wrap)
   nmap <silent> <C-J> <Plug>(ale_next_wrap)
   let g:ale_sign_error = '×'
-  let g:ale_sign_warning = '⚠'
+  let g:ale_sign_warning = '!!'
   let g:ale_open_list = 1
   '''
 
