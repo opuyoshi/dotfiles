@@ -1,49 +1,162 @@
 [[plugins]]
-repo = 'thinca/vim-quickrun'
+repo = 'prabirshrestha/asyncomplete.vim'
+on_ft = ['autohotkey', 'autoit', 'cfg', 'git', 'go', 'groovy', 'java', 'javascript', 'python', 'snippet', 'toml', 'vim', 'vb', 'xsl','c', 'cpp', 'objc', 'objcpp']
+hook_add = '''
+  " let g:asyncomplete_log_file = expand('~/_vim/.asyncomplete/log.log')
+  let g:asyncomplete_enable_for_all = 0
+  autocmd vimrc FileType autohotkey,autoit,cfg,git,go,groovy,java,javascript,python,snippet,toml,vim,vb,xsl,c,cpp,objc,objcpp call asyncomplete#enable_for_buffer()
+'''
 
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-on_i = 1
-hook_add= '''
-  let g:deoplete#enable_at_startup = 1
-  '''
-hook_post_source = '''
-  let g:deoplete#omni_patterns = {}
-  '''
-
-[[plugins]]
-repo = 'zchee/deoplete-jedi'
-depends = ['deoplete.nvim']
-on_i = 1
-on_ft = ['python']
+repo = 'prabirshrestha/asyncomplete-buffer.vim'
+on_ft = ['autohotkey', 'autoit', 'cfg', 'git', 'go', 'groovy', 'java', 'javascript', 'python', 'snippet', 'toml', 'vim', 'vb', 'xsl', 'c', 'cpp', 'objc', 'objcpp']
 hook_source = '''
-  let g:deoplete#sources#jedi#statement_length = 0
-  let g:deoplete#sources#jedi#short_types = 0
-  let g:deoplete#sources#jedi#worker_threads = 2
-  '''
+  autocmd vimrc User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+      \ 'name': 'buffer',
+      \ 'priority': 5,
+      \ 'whitelist': ['*'],
+      \ 'completor': function('asyncomplete#sources#buffer#completor'),
+      \ }))
+'''
 
 [[plugins]]
-repo = 'zchee/deoplete-clang'
-depends = ['deoplete.nvim']
+repo = 'prabirshrestha/asyncomplete-file.vim'
+on_ft = ['autohotkey', 'autoit', 'cfg', 'git', 'go', 'groovy', 'java', 'javascript', 'python', 'snippet', 'toml', 'vim', 'vb', 'xsl', 'c', 'cpp', 'objc', 'objcpp']
 hook_source = '''
-  let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-3.8/lib/libclang-3.8.so.1'
-  let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
+  autocmd vimrc User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+      \ 'name': 'file',
+      \ 'priority': 3,
+      \ 'whitelist': ['*'],
+      \ 'completor': function('asyncomplete#sources#file#completor'),
+      \ }))
+'''
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-necosyntax.vim'
+on_ft = ['autohotkey', 'autoit', 'cfg', 'git', 'go', 'groovy', 'java', 'javascript', 'python', 'snippet', 'toml', 'vim', 'vb', 'xsl', 'c', 'cpp', 'objc', 'objcpp']
+depends = ['neco-syntax']
+hook_source = '''
+  autocmd vimrc User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#necosyntax#get_source_options({
+      \ 'name': 'necosyntax',
+      \ 'priority': 7,
+      \ 'whitelist': ['*'],
+      \ 'completor': function('asyncomplete#sources#necosyntax#completor'),
+      \ }))
+'''
+
+[[plugins]]
+repo = 'Shougo/neco-syntax'
+lazy = 1
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-necovim.vim'
+on_ft = ['vim']
+depends = ['neco-vim']
+hook_source = '''
+  autocmd vimrc User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#necovim#get_source_options({
+      \ 'name': 'necovim',
+      \ 'whitelist': ['vim'],
+      \ 'priority': 10,
+      \ 'completor': function('asyncomplete#sources#necovim#completor'),
+      \ }))
+'''
+
+[[plugins]]
+repo = 'Shougo/neco-vim'
+lazy = 1
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-neosnippet.vim'
+on_ft = ['autohotkey', 'autoit', 'cfg', 'git', 'go', 'groovy', 'java', 'javascript', 'python', 'snippet', 'toml', 'vim', 'vb', 'xsl', 'c', 'cpp', 'objc', 'objcpp']
+depends = ['neosnippet.vim']
+hook_source = '''
+  autocmd vimrc User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#neosnippet#get_source_options({
+      \ 'name': 'neosnippet',
+      \ 'whitelist': ['*'],
+      \ 'priority': 9,
+      \ 'completor': function('asyncomplete#sources#neosnippet#completor'),
+      \ }))
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+depends = 'neosnippet-snippets'
+hook_source = '''
+  " <TAB>: completion.
+  inoremap <expr> <S-TAB> pumvisible() ? '<C-p>' : '<S-TAB>'
+
+  " Plugin key-mappings.
+  imap <C-k> <Plug>(neosnippet_expand_or_jump)
+  smap <C-k> <Plug>(neosnippet_expand_or_jump)
+
+  " SuperTab like snippets behavior.
+  imap <expr> <TAB> neosnippet#jumpable() ? '<Plug>(neosnippet_expand_or_jump)' : pumvisible() ? '<C-n>' : '<TAB>'
+  smap <expr> <TAB> neosnippet#jumpable() ? '<Plug>(neosnippet_expand_or_jump)' : '<TAB>'
+
+  let g:neosnippet#data_directory = expand('~/_vim/.neosnippet')
+
+  " Tell Neosnippet about the other snippets
+  let g:neosnippet#snippets_directory = [
+        \   '~/vimfiles/snippets',
+        \   '~/_vim/dein/repos/github.com/honza/vim-snippets/snippets/',
+        \   '~/_vim/dein/repos/github.com/fatih/vim-go/gosnippets/snippets/',
+        \ ]
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+rtp = ''
+
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+hook_source = '''
+
+  if executable('pyls')
+      autocmd vimrc User lsp_setup call lsp#register_server({
+          \ 'name': 'pyls',
+          \ 'cmd': {server_info->['pyls']},
+          \ 'whitelist': ['python'],
+          \ })
+  endif
+  if executable('go-langserver')
+      au User lsp_setup call lsp#register_server({
+          \ 'name': 'go-langserver',
+          \ 'cmd': {server_info->['go-langserver', '-gocodecompletion']},
+          \ 'whitelist': ['go'],
+          \ })
+  endif
+  if executable('clangd')
+      au User lsp-setup call lsp#register_server({
+          \ 'name': 'clangd',
+          \ 'cmd': {server_info->['clangd', '-background-index']},
+          \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp'],
+          \ })
+  endif
+  let g:lsp_diagnostics_enabled = 0
+  highlight lspReference ctermfg=red guifg=red ctermbg=green guibg=green
+'''
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+on_ft = ['python', 'go', 'c', 'cpp', 'objc', 'objcpp']
+depends = ['asyncomplete.vim', 'vim-lsp']
+
+[[plugins]]
+repo = 'tpope/vim-markdown'
+hook_add = '''
+  let g:markdown_fenced_languages = ['html', 'python', 'cpp', 'bash=sh', 'toml']
   '''
-on_ft = ['c', 'cpp', 'cmake']
-
-[[plugins]]
-repo = 'Shougo/neoinclude.vim'
-on_ft = ['c', 'cpp']
-depends = ['deoplete.nvim']
-
-[[plugins]]
-repo = 'dbgx/lldb.nvim'
-on_ft = ['c', 'cpp']
 
 [[plugins]]
 repo = 'kannokanno/previm'
 hook_add = '''
-  let g:previm_open_cmd = '/mnt/c/"Program Files (x86)"/Google/Chrome/Application/chrome.exe'
+  let g:previm_open_cmd = '/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
   let g:previm_wsl_mode = 1
   '''
 

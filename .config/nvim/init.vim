@@ -1,5 +1,9 @@
+augroup vimrc
+    autocmd!
+augroup END
+
 "プラグインが実際にインストールされるディレクトリ
-let s:dein_dir = expand('~/dotfiles/.cache/dein')
+let s:dein_dir = expand('~/dotfiles/.vim/dein')
 "dein.vim
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 

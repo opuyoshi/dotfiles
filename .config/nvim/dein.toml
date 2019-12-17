@@ -23,9 +23,11 @@ hook_add = '''
   let g:airline#extensions#branch#enabled = 1
   let g:airline#extensions#tabline#fnamemod = ':t'
   let g:airline#extensions#wordcount#enabled = 1
-  let g:airline_section_c = '%t'
-  let g:airline_section_x = '%{&filetype}'
- ''' 
+  let g:airline#extensions#ale#enabled = 1
+  let g:airline#extensions#error_symbol = 'E:'
+  let g:airline#extensions#warning_symbol = 'W:'
+  let g:airline#extensions#whitespace#enabled = 0
+  ''' 
 
 
 [[plugins]]
