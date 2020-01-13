@@ -75,6 +75,9 @@ nnoremap sv :<C-u>vs<CR>
 "インサートモードのESCをjjにキーバインド
 inoremap <silent>jj <ESC>
 
+"LeaderをSpaceに変更
+let mapleader = "\<Space>"
+
 "文字コード
 set encoding=utf-8
 scriptencoding utf-8
