@@ -5,7 +5,7 @@ repo = 'Shougo/dein.vim'
 repo = 'scrooloose/nerdtree'
 hook_add = '''
   let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-  let g:NERDTreeDirArrowExpandable = '▶'
+  let g:NERDTreeDirArrowExpandable = '>'
   let g:NERDTreeDirArrowExpandable = '▼'
   '''
 
@@ -19,7 +19,6 @@ hook_add = '''
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#branch#enabled = 1
   let g:airline_section_z = airline#section#create(['windowswap', '%3p%%', 'linenr', ':%3v'])
-  let g:airline#extensions#ale#enabled = 1
   let g:airline#extensions#error_symbol = 'E:'
   let g:airline#extensions#warning_symbol = 'W:'
   let g:airline#extensions#whitespace#enabled = 1
@@ -57,3 +56,12 @@ repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'twitvim/twitvim'
+hook_add = '''
+  let twitvim_enable_python = 1
+  let twitvim_browser_cmd = '/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
+  let twitvim_force_ssl = 1
+  let twitvim_count = 40
+  '''
