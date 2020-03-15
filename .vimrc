@@ -1,7 +1,3 @@
-augroup vimrc
-    autocmd!
-augroup END
-
 "プラグインが実際にインストールされるディレクトリ
 let s:dein_dir = expand('~/dotfiles/.vim/dein')
 "dein.vim
@@ -46,6 +42,11 @@ syntax enable
 
 "Ctrl+eでNERDTreeを開く
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
+"lsp settings
+let g:lsp_signns_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:asyncomplete_remove_duplicates = 1
 
 "font settings
 set guifont=Cica:h16
@@ -121,18 +122,6 @@ inoremap [ []<ESC>i
 "コマンド補完
 set wildmenu "コマンドモードの補完
 set history=5000 "保存するコマンド履歴の数
-
-"マウスの有効化
-if has('mouse')
-    set mouse=a
-    if has('mouse_sgr')
-        set ttymouse=sgr
-    elseif v:version > 703 || v:version is 703 && has('patch632')
-        set ttymouse=sgr
-    else
-        set ttymouse=xterm2
-    endif
-endif
 
 "highlight settings
 highlight SpellBad ctermfg=8

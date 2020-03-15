@@ -2,6 +2,26 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'prabirshrestha/asyncomplete.vim'
+merged = '0'
+
+[[plugins]]
+repo = 'prabirshrestha/async.vim'
+merged = '0'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-lsp.vim'
+merged = '0'
+
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+merged = '0'
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+merged = '0'
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
   let g:WebDevIconsUnicodeDecorateFolderNodes = 1
@@ -15,13 +35,21 @@ depends = ['/vim-airline-themes']
 hook_add = '''
   let g:airline_theme = 'wombat'
   let g:airline_powerline_fonts = 1
+  let g:airline_mode_map = {
+          \'n' : 'N',
+          \'i' : 'I',
+          \'R' : 'R',
+          \'c' : 'C',
+          \'v' : 'V',
+          \'V' : 'V',
+          \' ' : 'V',
+          \'s' : 'S',
+          \'S' : 'S',
+          \}
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#branch#enabled = 1
-  let g:airline#extensions#error_symbol = 'E:'
-  let g:airline#extensions#warning_symbol = 'W:'
   let g:airline#extensions#whitespace#enabled = 1
   '''
-
 
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
@@ -31,19 +59,6 @@ repo = 'ryanoasis/vim-devicons'
 hook_add = '''
   set encoding=utf8
   let g:WebDevIconUnicodeDecorateFolderNodes = 1
-  '''
-
-[[plugins]]
-repo = 'w0rp/ale'
-hook_add = '''
-  let g:ale_lint_on_save = 1
-  let g:ale_lint_on_text_changed = 0
-  let g:ale_lint_on_enter = 0
-  nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-  nmap <silent> <C-J> <Plug>(ale_next_wrap)
-  let g:ale_sign_error = '×'
-  let g:ale_sign_warning = '!!'
-  let g:ale_open_list = 1
   '''
 
 [[plugins]]

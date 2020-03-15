@@ -6,7 +6,7 @@ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh >
 sh ./installer.sh ~/dotfiles/.vim/dein
 cd ~/dotfiles
 
-DOT_FILES=(.vimrc .vim .config)
+DOT_FILES=(.vimrc .vim)
 
 for file in ${DOT_FILES[@]}
 do
