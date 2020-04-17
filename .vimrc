@@ -47,6 +47,16 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 let g:lsp_signns_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:asyncomplete_remove_duplicates = 1
+nnoremap <buffer> <C-]> :<C-u>LspDefinition<CR>
+nnoremap <buffer> gd :<C-u>LspDefinition<CR>
+nnoremap <buffer> gD :<C-u>LspReferences<CR>
+nnoremap <buffer> gs :<C-u>LspDocumentSymbol<CR>
+nnoremap <buffer> gS :<C-u>LspWorkspaceSymbol<CR>
+nnoremap <buffer> gQ :<C-u>LspDocumentFormat<CR>
+vnoremap <buffer> gQ :LspDocumentRangeFormat<CR>
+nnoremap <buffer> K :<C-u>LspHover<CR>
+nnoremap <buffer> <F1> :<C-u>LspImplementation<CR>
+nnoremap <buffer> <F2> :<C-u>LspRename<CR>
 
 "font settings
 set guifont=Cica:h16
@@ -87,15 +97,14 @@ set fileencodings=ucs-boms,utf-8,euc-jp,cp932 "読み込み時の文字コード
 set fileformats=unix,dos,mac "改行コードの自動判別，左側が優先される
 set ambiwidth=double "文字が崩れる問題を解決
 
-syntax on
-
-"タブ・インデント
+"tab, indent
 set tabstop=4 "画面上でタブ文字が占める幅
 set softtabstop=4 "連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
 set autoindent "改行前に前の行のインデントを継続する
 set smartindent "改行前に前の行の構文をチェックし次の行のインデントを増減する
 set expandtab    "タブ入力を複数の空白入力に置き換える
 set shiftwidth=4 "smartindentで増減する幅
+set backspace=indent,eol,start
 
 "文字列検索
 set incsearch "インクリメンタルサーチ．1文字入力毎に検索を行う
@@ -126,3 +135,10 @@ set history=5000 "保存するコマンド履歴の数
 "highlight settings
 highlight SpellBad ctermfg=8
 highlight DiffChange ctermfg=8
+
+"clipboard
+set clipboard&
+set clipboard^=unnamedplus
+
+"terminal
+set termwinsize=7x0
