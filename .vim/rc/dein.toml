@@ -49,6 +49,7 @@ hook_add = '''
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#branch#enabled = 1
   let g:airline#extensions#whitespace#enabled = 1
+  let g:airline_section_z = "\ue0a1:%l/%L: Col:%c"
   '''
 
 [[plugins]]
