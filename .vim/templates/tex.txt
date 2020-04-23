@@ -1,0 +1,5 @@
+\documentclass[dvipdfmx,a4j]{jarticle}
+\usepackage{amsmath,amssymb,bm}
+\begin{document}
+
+\end{document}

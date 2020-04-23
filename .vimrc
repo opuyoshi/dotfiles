@@ -142,3 +142,9 @@ set clipboard^=unnamedplus
 
 "terminal
 set termwinsize=7x0
+
+"templates
+augroup templates
+    autocmd!
+    autocmd BufNewFile *.tex 0r $HOME/.vim/templates/tex.txt
+augroup END
