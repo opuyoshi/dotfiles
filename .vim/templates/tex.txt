@@ -1,4 +1,4 @@
-\documentclass[dvipdfmx,a4j]{jarticle}
+\documentclass[dvipdfmx,a4j]{jsarticle}
 \usepackage{amsmath,amssymb,bm}
 \begin{document}
 
