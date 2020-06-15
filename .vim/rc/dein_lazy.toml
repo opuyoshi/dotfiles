@@ -7,7 +7,8 @@ hook_add = '''
 [[plugins]]
 repo = 'kannokanno/previm'
 hook_add = '''
-  let g:previm_open_cmd = '/usr/bin/google-chrome'
+  let g:previm_open_cmd = '/mnt/c/Program\ Files\ \(X86\)/Google/Chrome/Application/chrome.exe'
+  let g:previm_wsl_mode = 1
   '''
 
 [[plugins]]
