@@ -116,7 +116,7 @@ nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
 
 "カーソル
 set number "行番号を表示
-set cursorline "カーソルラインをハイライト
+"set cursorline "カーソルラインをハイライト
 
 "カッコ・タグジャッジ
 set showmatch "括弧の対応関係を一瞬表示する
