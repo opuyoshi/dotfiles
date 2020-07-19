@@ -12,3 +12,12 @@ hook_add = '''
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
+
+[[plugins]]
+repo = 'rhysd/vim-grammarous'
+hook_add = '''
+  let g:grammarous#enable_spell_check=1
+  let g:grammarous#disabled_categories = {
+          \ '*' : ['PUNCTUATION'],
+          \ }
+  '''

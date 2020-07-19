@@ -125,7 +125,7 @@ inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap ( ()<ESC>i
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
 inoremap " ""<ESC>i
-inoremap ' ''<ESC>i
+"inoremap ' ''<ESC>i
 inoremap [ []<ESC>i
 
 "コマンド補完
@@ -142,6 +142,9 @@ set clipboard^=unnamedplus
 
 "terminal
 set termwinsize=7x0
+
+"add japanese
+set spelllang+=cjk
 
 "templates
 augroup templates
