@@ -1,6 +1,20 @@
 \documentclass[dvipdfmx,a4j]{jsarticle}
 \usepackage[top=10mm, bottom=20mm, left=20mm, right=20mm]{geometry}
-\usepackage{amsmath,amssymb,bm}
+\usepackage{amsmath, amssymb, amsthm, bm}
+%\usepackage{subcaption}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{here}
+\usepackage{url}
+\usepackage{mathtools}
+%\usepackage{dirtree}
+%\usepackage{listings}
+%\lstset{
+    %frame=single,
+    %numbers=left,
+    %tabsize=2
+    %}
+%\usepackage{color}
+
 \title{}
 \author{}
 \date{\today}
