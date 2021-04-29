@@ -1,4 +1,5 @@
 \documentclass[a4paper,12pt]{jsarticle}
+\usepackage[top=10mm, bottom=20mm, left=20mm, right=20mm]{geometry}
 \usepackage{amsmath, amssymb, amsthm, bm}
 \usepackage{mathtools}
 \usepackage{siunitx}  % SI unit
