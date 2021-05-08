@@ -36,6 +36,8 @@ endif
 filetype plugin indent on
 syntax enable
 
+set background=dark  "delete weird sequence on display: ^[P1$r0 q^[\^[[?12;4$y
+
 "除外設定
 "let g:flake8_ignore = 'E231'
 "let g:syntastic_python_flake8_args = '--ignore="E231"'
