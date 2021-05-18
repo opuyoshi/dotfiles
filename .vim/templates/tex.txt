@@ -1,21 +1,26 @@
-\documentclass[a4paper,12pt]{jsarticle}
+\RequirePackage{plautopatch}
+\documentclass[dvipdfmx,uplatex,a4paper,12pt]{jsarticle}
 \usepackage[top=10mm, bottom=20mm, left=20mm, right=20mm]{geometry}
 \usepackage{amsmath, amssymb, amsthm, bm}
 \usepackage{mathtools}
 \usepackage{booktabs}  % make nice table: Use \(top|mid|bottom)rule instead of \hline.
 \usepackage{siunitx}  % SI unit
-\usepackage[dvipdfmx]{graphicx}
+\usepackage{graphicx}
 \usepackage{here}
 \usepackage{subcaption}
 \usepackage{url}
 \usepackage{comment}
-\usepackage{ascmac}  % itembox
+%\usepackage{ascmac}  % itembox
 %\usepackage{dirtree} % directory tree
 %\usepackage{color}
 
+%orignal command
+\newcommand{\kakko}[1]{\left(#1\right)}
+\newcommand{\kaigyo}[1]{\begin{tabular}{c}#1\end{tabular}}  % use in the table
+
 \begin{comment}  % comment out the settings of hyperlink and listings
 % hyperlink
-\usepackage[dvipdfmx]{hyperref}
+\usepackage{hyperref}
 \usepackage{pxjahyper}
 \hypersetup{
     setpagesize=false,
