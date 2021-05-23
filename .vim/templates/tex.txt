@@ -18,41 +18,40 @@
 \newcommand{\kakko}[1]{\left(#1\right)}
 \newcommand{\kaigyo}[1]{\begin{tabular}{c}#1\end{tabular}}  % use in the table
 
-\begin{comment}  % comment out the settings of hyperlink and listings
-% hyperlink
-\usepackage{hyperref}
-\usepackage{pxjahyper}
-\hypersetup{
-    setpagesize=false,
-    bookmarksnumbered=true,
-    bookmarksopen=true,
-    colorlinks=true,
-    linkcolor=black,
-    citecolor=black,
-    urlcolor=blue,
-}
+%% comment out the settings of hyperlink and listings
+%% hyperlink
+%\usepackage{hyperref}
+%\usepackage{pxjahyper}
+%\hypersetup{
+    %setpagesize=false,
+    %bookmarksnumbered=true,
+    %bookmarksopen=true,
+    %colorlinks=true,
+    %linkcolor=black,
+    %citecolor=black,
+    %urlcolor=blue,
+%}
 
-% listings
-\usepackage{listings}
-\lstset{
+%% listings
+%\usepackage{listings}
+%\lstset{
     %language={C++},
-    basicstyle={\small},
-    identifierstyle={\small},
-    commentstyle={\small\itshape},
-    keywordstyle={\small\bfseries},
-    ndkeywordstyle={\small},
-    frame={tb},
-    breaklines=true,
-    columns=[l]{fullflexible},
-    numbers=left,
-    xrightmargin=0zw,
-    xleftmargin=3zw,
-    numberstyle={\scriptsize},
-    stepnumber=1,
-    numbersep=1zw,
-    lineskip=-0.5ex,
-}
-\end{comment}
+    %basicstyle={\small},
+    %identifierstyle={\small},
+    %commentstyle={\small\itshape},
+    %keywordstyle={\small\bfseries},
+    %ndkeywordstyle={\small},
+    %frame={tb},
+    %breaklines=true,
+    %columns=[l]{fullflexible},
+    %numbers=left,
+    %xrightmargin=0zw,
+    %xleftmargin=3zw,
+    %numberstyle={\scriptsize},
+    %stepnumber=1,
+    %numbersep=1zw,
+    %lineskip=-0.5ex,
+%}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% end of preamble %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title{}
