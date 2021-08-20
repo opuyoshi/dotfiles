@@ -153,5 +153,5 @@ set spelllang+=cjk
 "templates
 augroup templates
     autocmd!
-    autocmd BufNewFile *.tex 0r $HOME/.vim/templates/tex.txt
+    autocmd BufNewFile *.tex 0r $HOME/.vim/templates/tex.tex
 augroup END
