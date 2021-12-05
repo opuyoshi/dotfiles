@@ -1,0 +1,16 @@
+*
+!*/
+!*.*
+!Makefile
+*.aux
+*.dvi
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+*.bbl
+*.blg
+*.xbb
+*.toc
+*.out
+Thumbs.db

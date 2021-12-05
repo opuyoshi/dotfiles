@@ -132,6 +132,9 @@ inoremap " ""<ESC>i
 "inoremap ' ''<ESC>i
 inoremap [ []<ESC>i
 
+"xml, html専用補完
+autocmd FileType xml,html inoremap <buffer> </ </<C-x><C-o>
+
 "コマンド補完
 set wildmenu "コマンドモードの補完
 set history=5000 "保存するコマンド履歴の数
@@ -154,4 +157,5 @@ set spelllang+=cjk
 augroup templates
     autocmd!
     autocmd BufNewFile *.tex 0r $HOME/.vim/templates/tex.tex
+    autocmd BufNewFile .gitignore 0r $HOME/.vim/templates/gitignore.txt
 augroup END
