@@ -1,11 +1,11 @@
 \RequirePackage{plautopatch}
 \documentclass[dvipdfmx,uplatex,a4paper,12pt]{jsarticle}
-\usepackage[top=10mm, bottom=15mm, left=20mm, right=20mm]{geometry}
+\usepackage[top=10mm, bottom=15mm, left=15mm, right=15mm]{geometry}  % left, right: 20mm -> 15mm
 \usepackage{amsmath, amssymb, amsthm, bm}
 \usepackage{mathtools}
 \usepackage{booktabs}  % make nice table: Use \(top|mid|bottom)rule instead of \hline.
 \usepackage{siunitx}  % SI unit
-\usepackage{enumitem}  % \begin{enumerate}[label=keyword], keyword = \alph*, \roman*, arabic* etc
+\usepackage{enumitem}  % \begin{enumerate}[label=keyword (= \alph*, \roman*, arabic* , etc.)]
 \usepackage{graphicx}
 \usepackage{here}
 \usepackage{subcaption}
@@ -19,19 +19,18 @@
 \newcommand{\kakko}[1]{\left(#1\right)}
 \newcommand{\kaigyo}[1]{\begin{tabular}{c}#1\end{tabular}}  % use in the table
 
-%% comment out the settings of hyperlink and listings
 %% hyperlink
-%\usepackage{hyperref}
-%\usepackage{pxjahyper}
-%\hypersetup{
-    %setpagesize=false,
-    %bookmarksnumbered=true,
-    %bookmarksopen=true,
-    %colorlinks=true,
-    %linkcolor=black,
-    %citecolor=black,
-    %urlcolor=blue,
-%}
+\usepackage{hyperref}
+\usepackage{pxjahyper}
+\hypersetup{
+    setpagesize=false,
+    bookmarksnumbered=true,
+    bookmarksopen=true,
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue,
+}
 
 %% listings
 %\usepackage{listings}
