@@ -1,0 +1,62 @@
+\RequirePackage{plautopatch}
+\documentclass[dvipdfmx,uplatex,a4paper,12pt]{jsarticle}
+\usepackage[top=20mm, bottom=15mm, left=15mm, right=15mm,truedimen]{geometry}
+% geometryにtruedimenを追記しないと，documentclassで記述したフォントサイズが反映されない
+\usepackage{booktabs}  % make nice table: Use \(top|mid|bottom)rule instead of \hline.
+\usepackage{enumitem}  % \begin{enumerate}[label=keyword (= \alph*, \roman*, arabic* , etc.)]
+\usepackage{graphicx}
+\usepackage{here}
+
+
+\pagestyle{empty}
+\begin{document}
+
+\flushright{\today}
+
+\flushleft{
+    A株式会社 \\
+    人事部　山本様
+}
+
+\flushright{
+    〒123-4567 \\
+    東京都千代田区永田町1丁目7-1 \\
+    090-1234-5678 \\
+    山田花子
+}
+
+\vspace{10mm}
+
+\begin{center}
+    \textbf{\LARGE{送付状}}
+\end{center}
+
+\vspace{5mm}
+
+\flushleft{
+    拝啓　新春の候　貴社ますますご繁栄のこととお慶び申し上げます。 \\
+    このたび、ご指定のありました書類を用意しました。 \\
+    下記の通り提出いたしますので、ご査収のほどよろしくお願い申し上げます。
+}
+
+\vspace{5mm}
+
+\flushright{敬具}
+
+\vspace{5mm}
+
+\begin{center}
+    \Large{記}
+\end{center}
+
+\flushleft{
+    \begin{itemize}
+        \item 履歴書　1枚
+        \item 職務経歴書　2枚
+\end{itemize}
+}
+
+\vspace{10mm}
+\flushright{以上}
+
+\end{document}

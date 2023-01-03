@@ -1,4 +1,4 @@
-"プラグインが実際にインストールされるディレクトリ
+" Directory where plugins are installed
 let s:dein_dir = expand('~/dotfiles/.vim/dein')
 "dein.vim
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
@@ -47,21 +47,6 @@ set background=dark
 "Ctrl+eでNERDTreeを開く
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
-"lsp settings
-let g:lsp_signns_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 1
-let g:asyncomplete_remove_duplicates = 1
-nnoremap <buffer> <C-]> :<C-u>LspDefinition<CR>
-nnoremap <buffer> gd :<C-u>LspDefinition<CR>
-nnoremap <buffer> gD :<C-u>LspReferences<CR>
-nnoremap <buffer> gs :<C-u>LspDocumentSymbol<CR>
-nnoremap <buffer> gS :<C-u>LspWorkspaceSymbol<CR>
-nnoremap <buffer> gQ :<C-u>LspDocumentFormat<CR>
-vnoremap <buffer> gQ :LspDocumentRangeFormat<CR>
-nnoremap <buffer> K :<C-u>LspHover<CR>
-nnoremap <buffer> <F1> :<C-u>LspImplementation<CR>
-nnoremap <buffer> <F2> :<C-u>LspRename<CR>
-
 "font settings
 set guifont=Cica:h16
 set printfont=Cica:h12
@@ -76,7 +61,7 @@ nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 nnoremap sH <C-w>H
-"タブ移動
+" Move between Tabs
 nnoremap sn gt
 nnoremap sp gT
 nnoremap sr <C-w>r
@@ -87,10 +72,10 @@ nnoremap sO <C-w>=
 nnoremap ss :<C-u>sp<CR>
 nnoremap sv :<C-u>vs<CR>
 
-"インサートモードのESCをjjにキーバインド
+" Change ESC to jj in insert mode
 inoremap <silent>jj <ESC>
 
-"LeaderをSpaceに変更
+" LeaderをSpaceに変更
 let mapleader = "\<Space>"
 
 "文字コード
@@ -118,7 +103,7 @@ set hlsearch "検索結果をハイライト
 "ESCキー2度押しでハイライトの切り替え
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
 
-"カーソル
+" Cursor
 set number "行番号を表示
 "set cursorline "カーソルラインをハイライト
 
@@ -132,12 +117,12 @@ inoremap " ""<ESC>i
 "inoremap ' ''<ESC>i
 inoremap [ []<ESC>i
 
-"xml, html専用補完
+" Complement writing xml or html file
 autocmd FileType xml,html inoremap <buffer> </ </<C-x><C-o>
 
-"コマンド補完
-set wildmenu "コマンドモードの補完
-set history=5000 "保存するコマンド履歴の数
+" Command Line settings
+set wildmenu " Complement by tab key when using command line mode
+set history=5000 " Number of command history to save
 
 "highlight settings
 highlight SpellBad ctermfg=8
@@ -157,5 +142,6 @@ set spelllang+=cjk
 augroup templates
     autocmd!
     autocmd BufNewFile *.tex 0r $HOME/.vim/templates/tex.tex
+    autocmd BufNewFile letter.tex 0r $HOME/.vim/templates/letter.tex
     autocmd BufNewFile .gitignore 0r $HOME/.vim/templates/gitignore.txt
 augroup END
