@@ -49,24 +49,11 @@ hook_add = '''
   let g:WebDevIconUnicodeDecorateFolderNodes = 1
   '''
 
-# toml syntax highlight
-[[plugins]]
-repo = 'cespare/vim-toml'
-
-# Git wrapper
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-
 # Show git diff markers in the sign column and stages/previews/undoes hunks and partial hunks
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 
-# Twitter on Vim
-[[plugins]]
-repo = 'twitvim/twitvim'
-hook_add = '''
-  let twitvim_enable_python = 1
-  let twitvim_browser_cmd = 'google-chrome'
-  let twitvim_force_ssl = 1
-  let twitvim_count = 40
-  '''
+# Molokai Color Scheme for GVim
+#[[plugins]]
+#repo = 'tomasr/molokai'
+#merged = '0'

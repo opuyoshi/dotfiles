@@ -38,3 +38,23 @@ hook_add = '''
           \ '*' : ['PUNCTUATION'],
           \ }
   '''
+
+# toml syntax highlight
+[[plugins]]
+on_ft = ['toml']
+repo = 'cespare/vim-toml'
+
+# Git wrapper
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+
+# Twitter on Vim
+[[plugins]]
+repo = 'twitvim/twitvim'
+hook_add = '''
+  let twitvim_enable_python = 1
+  let twitvim_browser_cmd = 'google-chrome'
+  let twitvim_force_ssl = 1
+  let twitvim_count = 40
+  '''
