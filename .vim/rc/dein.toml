@@ -1,25 +1,12 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete.vim'
-merged = '0'
 
 [[plugins]]
-repo = 'prabirshrestha/async.vim'
+repo = 'neoclide/coc.nvim'
+rev = 'release'
 merged = '0'
 
-[[plugins]]
-repo = 'prabirshrestha/asyncomplete-lsp.vim'
-merged = '0'
-
-[[plugins]]
-repo = 'prabirshrestha/vim-lsp'
-merged = '0'
-
-[[plugins]]
-repo = 'mattn/vim-lsp-settings'
-merged = '0'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
@@ -62,15 +49,19 @@ hook_add = '''
   let g:WebDevIconUnicodeDecorateFolderNodes = 1
   '''
 
+# toml syntax highlight
 [[plugins]]
 repo = 'cespare/vim-toml'
 
+# Git wrapper
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
+# Show git diff markers in the sign column and stages/previews/undoes hunks and partial hunks
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 
+# Twitter on Vim
 [[plugins]]
 repo = 'twitvim/twitvim'
 hook_add = '''

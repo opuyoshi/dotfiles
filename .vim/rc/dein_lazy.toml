@@ -5,6 +5,23 @@ hook_add = '''
   '''
 
 [[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ['tex']
+hook_add = '''
+  syntax enable
+  let g:tex_flavor = "latex"
+  let g:vimtex_view_general_viewer = 'evince'
+'''
+
+# Enabling SyncTeX synchronization support for Vim and Evince through DBus
+[[plugins]]
+repo = 'peterbjorgensen/sved'
+on_ft = ['tex']
+hook_add = '''
+  nnoremap <F4> :call SVED_Sync()<CR>
+'''
+
+[[plugins]]
 repo = 'kannokanno/previm'
 hook_add = '''
   let g:previm_open_cmd = '/usr/bin/google-chrome'
