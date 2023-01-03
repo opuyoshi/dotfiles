@@ -1,6 +1,6 @@
 \RequirePackage{plautopatch}
 \documentclass[dvipdfmx,uplatex,a4paper,12pt]{jsarticle}
-\usepackage[top=10mm, bottom=15mm, left=15mm, right=15mm]{geometry}  % left, right: 20mm -> 15mm
+\usepackage[top=10mm, bottom=15mm, left=15mm, right=15mm]{geometry}
 \usepackage{amsmath, amssymb, amsthm, bm}
 \usepackage{mathtools}
 \usepackage{booktabs}  % make nice table: Use \(top|mid|bottom)rule instead of \hline.
@@ -10,18 +10,8 @@
 \usepackage{here}
 \usepackage{subcaption}
 \usepackage{url}
-\usepackage{comment}
-%\usepackage{ascmac}  % itembox
-%\usepackage{dirtree} % directory tree
-%\usepackage{xcolor}
-
-%orignal command
-\newcommand{\kakko}[1]{\left(#1\right)}
-\newcommand{\kaigyo}[1]{\begin{tabular}{c}#1\end{tabular}}  % use in the table
-
 %% hyperlink
 \usepackage{hyperref}
-\usepackage{pxjahyper}
 \hypersetup{
     setpagesize=false,
     bookmarksnumbered=true,
@@ -31,6 +21,18 @@
     citecolor=black,
     urlcolor=blue,
 }
+\usepackage{comment}
+%\usepackage{ascmac}  % itembox
+%\usepackage{dirtree} % directory tree
+%\usepackage{xcolor}
+
+% TikZ
+\usepackage{tikz}
+\usetikzlibrary{positioning, decorations.pathreplacing}
+
+%orignal command
+\newcommand{\kakko}[1]{\left(#1\right)}  % Automatic size adjustment for nested brackets
+\newcommand{\kaigyo}[1]{\begin{tabular}{c}#1\end{tabular}}  % use in the table
 
 %% listings
 %\usepackage{listings}
