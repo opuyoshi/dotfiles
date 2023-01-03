@@ -5,6 +5,7 @@ dotfiles about Vim
 ## [Requirements (for coc.nvim)](https://github.com/neoclide/coc.nvim)
 - Vim >= 8.1.1719
 - [nodejs](https://nodejs.org/en/download/) >= 14.14
+- Yarn
 
 ## Usage
 ```bash
