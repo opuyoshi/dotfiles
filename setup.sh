@@ -6,7 +6,7 @@ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh >
 sh ./installer.sh ~/dotfiles/.vim/dein
 cd ~/dotfiles
 
-DOT_FILES=(.vimrc .vim .latexmkrc)
+DOT_FILES=(.vimrc .gvimrc .vim .latexmkrc)
 
 for file in ${DOT_FILES[@]}
 do
