@@ -101,7 +101,7 @@ set ignorecase "検索パターンに大文字小文字を区別しない
 set smartcase "検索パターンを￥に大文字を含んでいたら大文字小文字を区別する
 set hlsearch "検索結果をハイライト
 "ESCキー2度押しでハイライトの切り替え
-nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
+nnoremap <silent><Esc><Esc> :<C-u>noh<CR>
 
 " Cursor
 set number "行番号を表示
@@ -145,3 +145,17 @@ augroup templates
     autocmd BufNewFile letter.tex 0r $HOME/.vim/templates/letter.tex
     autocmd BufNewFile .gitignore 0r $HOME/.vim/templates/gitignore.txt
 augroup END
+
+if executable('rg')
+    " :grep コマンドのバックエンドをripgrepに変更
+    set grepprg=rg\ --vimgrep\ --no-heading
+    " 検索結果のパース方法をripgrep用に最適化
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+
+    " 検索直後に自動で結果一覧（Quickfix）を開く便利設定
+    augroup QuickfixCmdPostGroup
+        autocmd!
+        " 検索直後に自動で結果一覧(Quickfix)を開く
+        autocmd QuickfixCmdPost *grep* copen
+    augroup END
+endif
