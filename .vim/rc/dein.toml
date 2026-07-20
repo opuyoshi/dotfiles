@@ -8,6 +8,7 @@ rev = 'release'
 merged = '0'
 
 
+
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
@@ -18,21 +19,21 @@ hook_add = '''
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
-depends = ['/vim-airline-themes']
+depends = ['vim-airline-themes']
 hook_add = '''
   let g:airline_theme = 'wombat'
   let g:airline_powerline_fonts = 1
   let g:airline_mode_map = {
-          \'n' : 'N',
-          \'i' : 'I',
-          \'R' : 'R',
-          \'c' : 'C',
-          \'v' : 'V',
-          \'V' : 'V',
-          \' ' : 'V',
-          \'s' : 'S',
-          \'S' : 'S',
-          \}
+          \ 'n' : 'N',
+          \ 'i' : 'I',
+          \ 'R' : 'R',
+          \ 'c' : 'C',
+          \ 'v' : 'V',
+          \ 'V' : 'V',
+          \ ' ' : 'V',
+          \ 's' : 'S',
+          \ 'S' : 'S',
+          \ }
   let g:airline#extensions#tabline#enabled = 1
   let g:airline#extensions#branch#enabled = 1
   let g:airline#extensions#whitespace#enabled = 1
