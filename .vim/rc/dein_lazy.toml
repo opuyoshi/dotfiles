@@ -30,14 +30,6 @@ hook_add = '''
 [[plugins]]
 repo = 'tyru/open-browser.vim'
 
-[[plugins]]
-repo = 'rhysd/vim-grammarous'
-hook_add = '''
-  let g:grammarous#enable_spell_check=1
-  let g:grammarous#disabled_categories = {
-          \ '*' : ['PUNCTUATION'],
-          \ }
-  '''
 
 # toml syntax highlight
 [[plugins]]
@@ -58,3 +50,14 @@ hook_add = '''
   let twitvim_force_ssl = 1
   let twitvim_count = 40
   '''
+
+[[plugins]]
+repo = 'github/copilot.vim'
+on_event = 'InsertEnter'
+on_cmd = 'Copilot'
+hook_add = '''
+  let g:copilot_no_tab_map = v:true
+'''
+hook_source = '''
+  imap <silent><script><expr> <C-j> copilot#Accept("\<CR>")
+'''
