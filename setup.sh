@@ -2,8 +2,7 @@
 
 mkdir -p ~/dotfiles/.vim/dein
 cd ~/dotfiles/.vim/dein
-curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-sh ./installer.sh ~/dotfiles/.vim/dein
+curl -fSL https://raw.githubusercontent.com/Shougo/dein-installer.vim/master/installer.sh | sh -s -- ~/dotfiles/.vim/dein
 cd ~/dotfiles
 
 DOT_FILES=(.vimrc .gvimrc .vim .latexmkrc)
