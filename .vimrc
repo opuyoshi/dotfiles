@@ -125,15 +125,26 @@ set wildmenu " Complement by tab key when using command line mode
 set history=5000 " Number of command history to save
 
 "highlight settings
-highlight SpellBad ctermfg=8
-highlight DiffChange ctermfg=8
+if has('gui_running')
+    highlight SpellBad guifg=Gray
+    highlight DiffChange guifg=Gray
+else
+    highlight SpellBad ctermfg=8
+    highlight DiffChange ctermfg=8
+endif
 
 "clipboard
 set clipboard&
-set clipboard^=unnamedplus
+if has('unix')
+    set clipboard^=unnamedplus
+elseif has('win32') || has('win64')
+    set clipboard=unnamed
+endif
 
 "terminal
-set termwinsize=7x0
+if has('terminal')
+    set termwinsize=7x0
+endif
 
 "add japanese
 set spelllang+=cjk
@@ -141,9 +152,11 @@ set spelllang+=cjk
 "templates
 augroup templates
     autocmd!
-    autocmd BufNewFile *.tex 0r $HOME/.vim/templates/tex.tex
-    autocmd BufNewFile letter.tex 0r $HOME/.vim/templates/letter.tex
-    autocmd BufNewFile .gitignore 0r $HOME/.vim/templates/gitignore.txt
+    if isdirectory(expand('~/.vim/templates'))
+        autocmd BufNewFile *.tex 0r $HOME/.vim/templates/tex.tex
+        autocmd BufNewFile letter.tex 0r $HOME/.vim/templates/letter.tex
+        autocmd BufNewFile .gitignore 0r $HOME/.vim/templates/gitignore.txt
+    endif
 augroup END
 
 if executable('rg')
